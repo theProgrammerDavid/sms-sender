@@ -27,12 +27,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SMS Node',
       theme: ThemeData(
-         primarySwatch: mediumPurple,
+        primarySwatch: mediumPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(
@@ -52,6 +53,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController uname;
+  TextEditingController pass;
+  TextEditingController ucode;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,15 +85,41 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: Border.all(color: lightPurple, width: 5),
                   borderRadius: new BorderRadius.circular(15)),
               child: Column(children: <Widget>[
+                SizedBox(height: 10),
+                //username
                 new TextField(
-                  
+                  controller: uname,
                   style: new TextStyle(color: lightPurple),
                   decoration: new InputDecoration(
                     hintText: 'Username',
                     hintStyle: new TextStyle(color: lightPurple),
-                      // fillColor: Colors.orange, filled: true
-                      ),
+                    // fillColor: Colors.orange, filled: true
+                  ),
                 ),
+                SizedBox(height: 20),
+                //password
+                 new TextField(
+                   obscureText: true,
+                  controller: uname,
+                  style: new TextStyle(color: lightPurple),
+                  decoration: new InputDecoration(
+                    hintText: 'Password',
+                    hintStyle: new TextStyle(color: lightPurple),
+                    // fillColor: Colors.orange, filled: true
+                  ),
+                ),
+                SizedBox(height: 10),
+                //unique string
+                 new TextField(
+                  controller: uname,
+                  style: new TextStyle(color: lightPurple),
+                  decoration: new InputDecoration(
+                    hintText: 'Unique String',
+                    hintStyle: new TextStyle(color: lightPurple),
+                    // fillColor: Colors.orange, filled: true
+                  ),
+                ),
+                
                 MyButton("Login", lightPurple, () {}),
               ]),
             ),
