@@ -98,8 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 SizedBox(height: 20),
                 //password
-                 new TextField(
-                   obscureText: true,
+                new TextField(
+                  obscureText: true,
                   controller: uname,
                   style: new TextStyle(color: lightPurple),
                   decoration: new InputDecoration(
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 SizedBox(height: 10),
                 //unique string
-                 new TextField(
+                new TextField(
                   controller: uname,
                   style: new TextStyle(color: lightPurple),
                   decoration: new InputDecoration(
@@ -119,8 +119,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     // fillColor: Colors.orange, filled: true
                   ),
                 ),
-                
-                MyButton("Login", lightPurple, () {}),
+
+                MyButton("Login", lightPurple, () {
+// Navigator.push(
+//             context,
+//             MaterialPageRoute(builder: (context) => MainNav()),
+//           );
+                }),
               ]),
             ),
             Spacer(flex: 1),
