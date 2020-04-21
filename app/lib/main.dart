@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sms/sms.dart';
 import 'button.dart';
 import 'constants.dart';
+import 'card.dart';
 
+SmsQuery query;
 
- SmsQuery query ;
-
-void sendSms(){
-   SmsSender sender = new SmsSender();
+void sendSms() {
+  SmsSender sender = new SmsSender();
   String address = '9370277948';
-  
+
   SmsMessage message = new SmsMessage(address, 'test sms');
   message.onStateChanged.listen((state) {
     if (state == SmsMessageState.Sent) {
@@ -21,9 +21,8 @@ void sendSms(){
   sender.sendSms(message);
 }
 
-
 void main() {
-    runApp(MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -33,12 +32,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'SMS Node',
       theme: ThemeData(
-       
-        primarySwatch: Colors.deepPurple,
-       
+         primarySwatch: mediumPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'SMS Node',),
+      home: MyHomePage(
+        title: 'SMS Node',
+      ),
     );
   }
 }
@@ -53,25 +52,47 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       // appBar: AppBar(
-     
+
       //   title: Text(widget.title),
       // ),
       backgroundColor: darkPurple,
       body: Center(
-       
         child: Column(
-          
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          new MyButton('Connect',Colors.orange, (){
-            print('Logged In');
-          }),
+            Spacer(flex: 1),
+            Text(
+              "SMS Node",
+              style: TextStyle(
+                  color: lightPurple,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold),
+            ),
+            Spacer(flex: 1),
+            new Container(
+              margin: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(3.0),
+              decoration: BoxDecoration(
+                  border: Border.all(color: lightPurple, width: 5),
+                  borderRadius: new BorderRadius.circular(15)),
+              child: Column(children: <Widget>[
+                new TextField(
+                  
+                  style: new TextStyle(color: lightPurple),
+                  decoration: new InputDecoration(
+                    hintText: 'Username',
+                    hintStyle: new TextStyle(color: lightPurple),
+                      // fillColor: Colors.orange, filled: true
+                      ),
+                ),
+                MyButton("Login", lightPurple, () {}),
+              ]),
+            ),
+            Spacer(flex: 1),
           ],
         ),
       ),
