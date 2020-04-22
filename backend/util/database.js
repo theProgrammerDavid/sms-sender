@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 
-const server = process.env.MONGODB_URL || 'mongodb://localhost:27017'; // REPLACE WITH YOUR DB SERVER
-const database = process.env.MONGODB_DATABASE | 'sms-sender';      // REPLACE WITH YOUR DB NAME
+const server = process.env.MONGODB_URL || 'mongodb://localhost:27017'; 
+const database = process.env.MONGODB_DATABASE | 'sms-sender';      
 
 class Database {
     constructor() {
@@ -9,7 +9,7 @@ class Database {
     }
 
     _connect() {
-        mongoose.connect(`${server}/${database}`)
+        mongoose.connect(`${server}/${database}`, {useNewUrlParser:true})
             .then(() => {
                 console.log('Database connection successful')
             })
