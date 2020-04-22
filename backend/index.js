@@ -1,11 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');// initialize our express app
 const jwt = require('jsonwebtoken');
 
-require('dotenv').config();
-
 const apiRouter = require('./routes/api');
-
 
 //const apiRouter = require('./routes/apiRouter');
 
