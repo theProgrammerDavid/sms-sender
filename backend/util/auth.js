@@ -2,6 +2,11 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 
 
+/*
+FORMAT OF JWT TOKEN
+Authorization: <access_token>
+*/
+
 // function verifyToken(req, res, next) {
 
 //     //step 1: get the auth header value

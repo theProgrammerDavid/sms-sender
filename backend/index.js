@@ -59,10 +59,7 @@ app.post('/api/login', (req, res) => {
 
 
 
-/*
-FORMAT OF JWT TOKEN
-Authorization: <access_token>
-*/
+
 
 app.listen(port, () => {
     console.log('Server is up and running on port numner ' + port);
