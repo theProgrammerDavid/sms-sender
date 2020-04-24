@@ -10,9 +10,15 @@
   "author": "David Velho (davidvelho2awesome@gmail.com)",
   "license": "ISC",
   "dependencies": {
+    "admin-bro": "^2.2.7",
+    "admin-bro-expressjs": "^2.0.4",
+    "admin-bro-mongoose": "^0.5.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10"
   }
