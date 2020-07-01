@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 /*
@@ -8,30 +8,26 @@ When such an integration is made, the service needs these three parameters (Name
 so you can possibly use your existing Mongo Collections that contain these three parameters
 */
 const PersonSchema = new Schema({
-		Name: {
-			type: String,
-			required: false,
-			select: true,
-		},
-		PhoneNumber: {
-			type: String,
-			required: true,
-		},
-		DailyLimit: {
-			type: Number,
-			required: true,
-			select: true,
-			default: -1,
-		},
-		secret: {
-			type: String,
-			required: false,
-			select: true,
-		},
-
-
+  Name: {
+    type: String,
+    required: false,
+    select: true,
+  },
+  PhoneNumber: {
+    type: String,
+    required: true,
+  },
+  DailyLimit: {
+    type: Number,
+    required: true,
+    select: true,
+    default: -1,
+  },
+  secret: {
+    type: String,
+    required: false,
+    select: true,
+  },
 });
 
-
-module.exports = mongoose.model('People', NodeSchema);
-
+module.exports = mongoose.model("People", PersonSchema);
